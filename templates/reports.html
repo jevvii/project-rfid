@@ -1,5 +1,8 @@
 <!-- Reports Page -->
-<div id="reportsPage" class="main-content hidden">
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<div id="reportsPage" class="main-content">
     <div class="page-title">
         <h1>Attendance Reports</h1>
         <div class="date-selector">
@@ -71,28 +74,21 @@
             <!-- Data will be populated by JavaScript -->
         </tbody>
     </table>
-
-    <h2 style="margin-top: 30px">Monthly Trends</h2>
-    <div
-        style="
-            background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            text-align: center;
-        "
-    >
-        <p>Attendance trend chart would be displayed here</p>
-        <div
-            style="
-                height: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--gray);
-            "
-        >
-            <i class="fas fa-chart-line" style="font-size: 3rem"></i>
-        </div>
-    </div>
+	<h2 style="margin-top: 30px">Monthly Trends</h2>
+<div
+    style="
+        background: var(--light);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    "
+>
+    <canvas id="attendanceTrendChart" height="120"></canvas>
 </div>
+
+</div>
+{% endblock content %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/reports.js' %}"></script>
+{% endblock scripts %}

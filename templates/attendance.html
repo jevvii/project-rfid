@@ -1,5 +1,8 @@
 <!-- Attendance Page -->
-<div id="attendancePage" class="main-content hidden">
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<div id="attendancePage" class="main-content">
     <div class="page-title">
         <h1>Attendance Management</h1>
         <button class="btn btn-primary" id="addAttendanceBtn">
@@ -61,6 +64,89 @@
             <!-- Data will be populated by JavaScript -->
         </tbody>
     </table>
+	    <!-- Add Attendance Modal -->
+    <div id="addAttendanceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Attendance Record</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="studentSelect">Student</label>
+                <select id="studentSelect">
+                    <option value="">Select Student</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="attendanceDate">Date</label>
+                <input type="date" id="attendanceDate" value="2023-10-16">
+            </div>
+            <div class="form-group">
+                <label for="timeInInput">Time In</label>
+                <input type="time" id="timeInInput" value="08:00">
+            </div>
+            <div class="form-group">
+                <label for="timeOutInput">Time Out</label>
+                <input type="time" id="timeOutInput" value="15:00">
+            </div>
+            <div class="form-group">
+                <label for="statusSelect">SMS Status</label>
+                <select id="statusSelect">
+                    <option value="success">Success</option>
+                    <option value="failed">Failed</option>
+                    <option value="delayed">Delayed</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancelAttendanceBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveAttendanceBtn">Save Record</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Attendance Modal -->
+    <div id="editAttendanceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Attendance Record</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <input type="hidden" id="editRecordId">
+            <div class="form-group">
+                <label for="editStudentSelect">Student</label>
+                <select id="editStudentSelect">
+                    <option value="">Select Student</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editAttendanceDate">Date</label>
+                <input type="date" id="editAttendanceDate">
+            </div>
+            <div class="form-group">
+                <label for="editTimeInInput">Time In</label>
+                <input type="time" id="editTimeInInput">
+            </div>
+            <div class="form-group">
+                <label for="editTimeOutInput">Time Out</label>
+                <input type="time" id="editTimeOutInput">
+            </div>
+            <div class="form-group">
+                <label for="editStatusSelect">SMS Status</label>
+                <select id="editStatusSelect">
+                    <option value="success">Success</option>
+                    <option value="failed">Failed</option>
+                    <option value="delayed">Delayed</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancelEditAttendanceBtn">Cancel</button>
+                <button class="btn btn-primary" id="updateAttendanceBtn">Update Record</button>
+            </div>
+        </div>
+    </div>
+
 
     <div class="pagination">
         <button class="active">1</button>
@@ -70,3 +156,7 @@
         <button>5</button>
     </div>
 </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/attendance.js' %}"></script>
+{% endblock scripts %}

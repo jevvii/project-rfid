@@ -1,3 +1,6 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
 <div id="dashboardPage" class="main-content">
     <div class="page-title">
         <h1>CCS Attendance Dashboard</h1>
@@ -66,3 +69,7 @@
         <button>5</button>
     </div>
 </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock scripts %}

@@ -1,5 +1,8 @@
 <!-- Students Page -->
-<div id="studentsPage" class="main-content hidden">
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<div id="studentsPage" class="main-content">
     <div class="page-title">
         <h1>Student Management</h1>
         <button class="btn btn-primary" id="addStudentBtn">
@@ -34,6 +37,78 @@
             <!-- Data will be populated by JavaScript -->
         </tbody>
     </table>
+	    <!-- Add Student Modal -->
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Student</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" placeholder="Enter student ID">
+            </div>
+            <div class="form-group">
+                <label for="studentName">Full Name</label>
+                <input type="text" id="studentName" placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label for="studentProgram">Program</label>
+                <select id="studentProgram">
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Entertainment and Multimedia">Entertainment and Multimedia</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="studentSection">Section</label>
+                <input type="text" id="studentSection" placeholder="Enter section">
+            </div>
+            <div class="form-group">
+                <label for="studentContact">Contact Number</label>
+                <input type="text" id="studentContact" placeholder="Enter contact number">
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancelStudentBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveStudentBtn">Save Student</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div id="editStudentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Student</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <input type="hidden" id="editStudentId">
+            <div class="form-group">
+                <label for="editStudentName">Full Name</label>
+                <input type="text" id="editStudentName" placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label for="editStudentProgram">Program</label>
+                <select id="editStudentProgram">
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Entertainment and Multimedia">Entertainment and Multimedia</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editStudentSection">Section</label>
+                <input type="text" id="editStudentSection" placeholder="Enter section">
+            </div>
+            <div class="form-group">
+                <label for="editStudentContact">Contact Number</label>
+                <input type="text" id="editStudentContact" placeholder="Enter contact number">
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancelEditStudentBtn">Cancel</button>
+                <button class="btn btn-primary" id="updateStudentBtn">Update Student</button>
+            </div>
+        </div>
+    </div>
 
     <div class="pagination">
         <button class="active">1</button>
@@ -43,3 +118,7 @@
         <button>5</button>
     </div>
 </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/students.js' %}"></script>
+{% endblock scripts %}
