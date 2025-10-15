@@ -1,0 +1,116 @@
+<!-- Settings Page -->
+<div id="settingsPage" class="main-content hidden">
+    <div class="page-title">
+        <h1>System Settings</h1>
+    </div>
+
+    <div class="stats-cards">
+        <div class="stat-card">
+            <h3>School Information</h3>
+            <div class="value">PLT Records</div>
+            <div class="trend"><i class="fas fa-school"></i> Active</div>
+        </div>
+        <div class="stat-card">
+            <h3>Academic Year</h3>
+            <div class="value">2023-2024</div>
+            <div class="trend"><i class="fas fa-calendar"></i> Current</div>
+        </div>
+        <div class="stat-card">
+            <h3>Users</h3>
+            <div class="value">48</div>
+            <div class="trend up">
+                <i class="fas fa-users"></i> 5 new this month
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>System Status</h3>
+            <div class="value">Online</div>
+            <div class="trend up">
+                <i class="fas fa-check-circle"></i> All systems operational
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-form">
+        <div class="settings-section">
+            <h3>General Settings</h3>
+            <div class="form-group">
+                <label for="schoolName">School Name</label>
+                <input type="text" id="schoolName" value="PLT Records" />
+            </div>
+            <div class="form-group">
+                <label for="academicYear">Academic Year</label>
+                <input type="text" id="academicYear" value="2023-2024" />
+            </div>
+            <div class="form-group">
+                <label for="timeIn">Default Time In</label>
+                <input type="time" id="timeIn" value="08:00" />
+            </div>
+            <div class="form-group">
+                <label for="timeOut">Default Time Out</label>
+                <input type="time" id="timeOut" value="15:00" />
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>SMS Gateway Settings</h3>
+            <div class="form-group">
+                <label for="smsProvider">SMS Provider</label>
+                <select id="smsProvider">
+                    <option value="twilio">Twilio</option>
+                    <option value="nexmo">Nexmo</option>
+                    <option value="plivo">Plivo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="apiKey">API Key</label>
+                <input type="password" id="apiKey" value="••••••••••••••••" />
+            </div>
+            <div class="form-group">
+                <label for="apiSecret">API Secret</label>
+                <input
+                    type="password"
+                    id="apiSecret"
+                    value="••••••••••••••••"
+                />
+            </div>
+            <div class="form-group">
+                <label for="senderId">Sender ID</label>
+                <input type="text" id="senderId" value="PLT-RECORDS" />
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>Notification Settings</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="emailNotifications" checked />
+                    Enable Email Notifications
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="smsNotifications" checked />
+                    Enable SMS Notifications
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="notificationEmail">Notification Email</label>
+                <input
+                    type="email"
+                    id="notificationEmail"
+                    value="admin@pltrecords.edu"
+                />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-secondary" id="cancelSettingsBtn">
+                Cancel
+            </button>
+            <button class="btn btn-primary" id="saveSettingsBtn">
+                Save Changes
+            </button>
+        </div>
+    </div>
+</div>

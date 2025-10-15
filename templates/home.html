@@ -1,0 +1,68 @@
+<div id="dashboardPage" class="main-content">
+    <div class="page-title">
+        <h1>CCS Attendance Dashboard</h1>
+        <div class="date-selector">
+            <input type="date" id="datePicker" value="2023-10-16" />
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter student number or name..."
+        />
+        <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+    </div>
+
+    <div class="stats-cards">
+        <div class="stat-card">
+            <h3>Total Students</h3>
+            <div class="value">1,248</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 3% from last year
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Present Today</h3>
+            <div class="value">1,192</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 2% from yesterday
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <h3>Average Attendance</h3>
+            <div class="value">95.5%</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 0.5% from last month
+            </div>
+        </div>
+    </div>
+
+    <h2>Recent Student Records</h2>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Program</th>
+                <th>Date</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>SMS Status</th>
+            </tr>
+        </thead>
+        <tbody id="attendanceTableBody">
+            <!-- Data will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+</div>

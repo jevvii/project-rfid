@@ -1,0 +1,45 @@
+<!-- Students Page -->
+<div id="studentsPage" class="main-content hidden">
+    <div class="page-title">
+        <h1>Student Management</h1>
+        <button class="btn btn-primary" id="addStudentBtn">
+            <i class="fas fa-plus"></i> Add Student
+        </button>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="studentSearchInput"
+            placeholder="Search students by name or ID..."
+        />
+        <button id="studentSearchBtn">
+            <i class="fas fa-search"></i> Search
+        </button>
+    </div>
+
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Program</th>
+                <th>Section</th>
+                <th>Contact</th>
+                <th>Attendance Rate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="studentsTable">
+            <!-- Data will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+</div>

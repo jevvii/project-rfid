@@ -1,0 +1,72 @@
+<!-- Attendance Page -->
+<div id="attendancePage" class="main-content hidden">
+    <div class="page-title">
+        <h1>Attendance Management</h1>
+        <button class="btn btn-primary" id="addAttendanceBtn">
+            <i class="fas fa-plus"></i> Add Record
+        </button>
+    </div>
+
+    <div class="attendance-controls">
+        <div class="filter-group">
+            <label>Date:</label>
+            <input type="date" id="attendanceDateFilter" value="2023-10-16" />
+        </div>
+        <div class="filter-group">
+            <label>Program:</label>
+            <select id="programFilter">
+                <option value="">All Program</option>
+                <option value="Information Technology">
+                    Information Technology
+                </option>
+                <option value="Entertainment and Multimedia">
+                    Entertainment and Multimedia
+                </option>
+                <option value="Computer Science">Computer Science</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>SMS Status:</label>
+            <select id="statusFilter">
+                <option value="">All SMS Status</option>
+                <option value="success">Success</option>
+                <option value="failed">Failed</option>
+                <option value="delayed">Delayed</option>
+            </select>
+        </div>
+        <div class="action-buttons">
+            <button class="btn btn-secondary">
+                <i class="fas fa-print"></i> Print
+            </button>
+            <button class="btn btn-secondary">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+    </div>
+
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Program</th>
+                <th>Date</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>SMS Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="attendanceManagementTable">
+            <!-- Data will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<!-- Reports Page -->
+<div id="reportsPage" class="main-content hidden">
+    <div class="page-title">
+        <h1>Attendance Reports</h1>
+        <div class="date-selector">
+            <input type="month" id="reportMonth" value="2023-10" />
+        </div>
+    </div>
+
+    <div class="stats-cards">
+        <div class="stat-card">
+            <h3>Overall Attendance</h3>
+            <div class="value">94.2%</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 1.2% from last month
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Absent Students</h3>
+            <div class="value">72</div>
+            <div class="trend down">
+                <i class="fas fa-arrow-down"></i> 5 from last month
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Late Arrivals</h3>
+            <div class="value">156</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 12 from last month
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Perfect Attendance</h3>
+            <div class="value">892</div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 23 from last month
+            </div>
+        </div>
+    </div>
+
+    <h2>Attendance by Program</h2>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Program</th>
+                <th>Total Students</th>
+                <th>Present</th>
+                <th>Absent</th>
+                <th>Late</th>
+                <th>Attendance Rate</th>
+            </tr>
+        </thead>
+        <tbody id="reportsTable">
+            <!-- Data will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <h2 style="margin-top: 30px">SMS Delivery Status</h2>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Program</th>
+                <th>Total SMS Sent</th>
+                <th>Success</th>
+                <th>Failed</th>
+                <th>Delayed</th>
+                <th>Success Rate</th>
+            </tr>
+        </thead>
+        <tbody id="smsReportsTable">
+            <!-- Data will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <h2 style="margin-top: 30px">Monthly Trends</h2>
+    <div
+        style="
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: center;
+        "
+    >
+        <p>Attendance trend chart would be displayed here</p>
+        <div
+            style="
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--gray);
+            "
+        >
+            <i class="fas fa-chart-line" style="font-size: 3rem"></i>
+        </div>
+    </div>
+</div>
